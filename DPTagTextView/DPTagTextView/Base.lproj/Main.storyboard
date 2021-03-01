@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Orx-Ax-oIA">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="QIb-gq-5hU">
+            <objects>
+                <viewController id="Orx-Ax-oIA" customClass="ViewController" customModule="TagNameDetection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zHk-zz-Hb0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KX3-jg-JIh" customClass="DPTagTextView" customModule="TagNameDetection" customModuleProvider="target">
+                                <rect key="frame" x="16" y="50" width="343" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.093062279929577468" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="W0I-hG-VCG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Rf-BJ-RcG">
+                                <rect key="frame" x="16" y="250" width="343" height="417"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Orx-Ax-oIA" id="eUp-pH-aN3"/>
+                                    <outlet property="delegate" destination="Orx-Ax-oIA" id="EIB-5z-VvR"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag Detection:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kf1-Nd-50K">
+                                <rect key="frame" x="20" y="12" width="110.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QAw-yv-NbB">
+                                <rect key="frame" x="138.5" y="7" width="51" height="31"/>
+                                <connections>
+                                    <action selector="tagDetectionSwitchAction:" destination="Orx-Ax-oIA" eventType="valueChanged" id="3HT-cZ-yIk"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUA-zA-BAw">
+                                <rect key="frame" x="355" y="22.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZY-TC-VQK">
+                                <rect key="frame" x="319" y="220" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="btnClearAction:" destination="Orx-Ax-oIA" eventType="touchUpInside" id="Gqw-aD-tyi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="75i-vh-ROk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kf1-Nd-50K" firstAttribute="leading" secondItem="75i-vh-ROk" secondAttribute="leading" constant="20" id="2PV-GF-bQb"/>
+                            <constraint firstItem="3Rf-BJ-RcG" firstAttribute="leading" secondItem="75i-vh-ROk" secondAttribute="leading" constant="16" id="2i4-ZR-9q4"/>
+                            <constraint firstItem="dUA-zA-BAw" firstAttribute="centerY" secondItem="QAw-yv-NbB" secondAttribute="centerY" id="BKS-FQ-XRl"/>
+                            <constraint firstItem="75i-vh-ROk" firstAttribute="trailing" secondItem="iZY-TC-VQK" secondAttribute="trailing" constant="20" id="QXM-yo-FcM"/>
+                            <constraint firstItem="75i-vh-ROk" firstAttribute="trailing" secondItem="KX3-jg-JIh" secondAttribute="trailing" constant="16" id="R10-x1-puo"/>
+                            <constraint firstItem="75i-vh-ROk" firstAttribute="trailing" secondItem="3Rf-BJ-RcG" secondAttribute="trailing" constant="16" id="URV-uo-1yv"/>
+                            <constraint firstItem="QAw-yv-NbB" firstAttribute="centerY" secondItem="Kf1-Nd-50K" secondAttribute="centerY" id="agX-pl-3Pd"/>
+                            <constraint firstItem="dUA-zA-BAw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zHk-zz-Hb0" secondAttribute="leading" constant="20" symbolic="YES" id="bvY-g1-Lv1"/>
+                            <constraint firstItem="75i-vh-ROk" firstAttribute="trailing" secondItem="dUA-zA-BAw" secondAttribute="trailing" constant="20" id="dK5-aY-bkW"/>
+                            <constraint firstItem="3Rf-BJ-RcG" firstAttribute="top" secondItem="iZY-TC-VQK" secondAttribute="bottom" id="dKe-lK-KGj"/>
+                            <constraint firstItem="3Rf-BJ-RcG" firstAttribute="top" secondItem="KX3-jg-JIh" secondAttribute="bottom" id="g73-YH-qYc"/>
+                            <constraint firstItem="Kf1-Nd-50K" firstAttribute="top" secondItem="75i-vh-ROk" secondAttribute="top" constant="12" id="h3O-W6-r48"/>
+                            <constraint firstItem="QAw-yv-NbB" firstAttribute="leading" secondItem="Kf1-Nd-50K" secondAttribute="trailing" constant="8" id="kGJ-XZ-8F0"/>
+                            <constraint firstItem="75i-vh-ROk" firstAttribute="bottom" secondItem="3Rf-BJ-RcG" secondAttribute="bottom" id="qZw-kx-Tw6"/>
+                            <constraint firstItem="KX3-jg-JIh" firstAttribute="leading" secondItem="75i-vh-ROk" secondAttribute="leading" constant="16" id="qr1-eR-cG2"/>
+                            <constraint firstItem="KX3-jg-JIh" firstAttribute="top" secondItem="75i-vh-ROk" secondAttribute="top" constant="50" id="tDI-l5-TM7"/>
+                            <constraint firstItem="iZY-TC-VQK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zHk-zz-Hb0" secondAttribute="leading" constant="20" symbolic="YES" id="uuv-BH-7er"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblTagName" destination="dUA-zA-BAw" id="Oau-3c-2rV"/>
+                        <outlet property="switchTagDetection" destination="QAw-yv-NbB" id="Lda-yC-KbG"/>
+                        <outlet property="tagTextView" destination="KX3-jg-JIh" id="ddS-k7-tsu"/>
+                        <outlet property="tbl" destination="3Rf-BJ-RcG" id="HO4-54-ghg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfc-Qu-NLP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="453.60000000000002" y="-14.842578710644679"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
